@@ -1,0 +1,80 @@
+<h1>{{uid}}</h1>
+<h2>基本属性</h2>
+<table class="table table-striped table-bordered">
+  <tr>
+    <th class="text-center">uid</th>
+    <th>性别</th>
+    <th>年龄</th>
+    <th>手机</th>
+    <th>话费</th>
+    <th>流量费</th>
+    <th>开通区域</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td class="text-center"><a ng-href="#/user/{{user.uid}}">{{user.uid}}</a></td>
+    <td>{{user.gender}}</td>
+    <td>{{user.age}}</td>
+    <td>{{user.brand_chn}}</td>
+    <td>{{user.call_fee}}</td>
+    <td>{{user.gprs_fee}}</td>
+    <td>{{user.dept_name}}</td>
+    <td><a ng-href="#/net/{{user.uid}}">网络流量</a></td>
+    <td><a ng-href="#/location/{{user.uid}}">地理位置</a></td>
+    <td><a ng-href="#/app_attrs/{{user.uid}}">应用属性</a></td>
+    <td><a ng-href="#/app-logs/{{user.uid}}">网络日志</a></td>
+  </tr>
+</table>
+<h2>地理位置</h2>
+<location-range data="location_range_data" seed="{{seed}}"></location-range>
+<location-range data="location_stop_range_data" seed="{{seed}}"></location-range>
+<periodic-matrix data="proba_matrix"></periodic-matrix>
+<periodic-matrix data="semantic_proba_matrix"></periodic-matrix>
+<periodic-matrix data="district_proba_matrix"></periodic-matrix>
+<periodic-matrix data="tag_proba_matrix"></periodic-matrix>
+<!--
+<periodic-matrix data="holiday_proba_matrix"></periodic-matrix>
+<periodic-matrix data="workday_proba_matrix"></periodic-matrix>
+-->
+<periodic-matrix data="status_matrix"></periodic-matrix>
+<h1>Stop hist</h1>
+<histgram data="stop_proba" index="tick" range="49"></histgram>
+
+<h1>Move hist</h1>
+<histgram data="move_proba" index="tick" range="49"></histgram>
+
+<h1>Off hist</h1>
+<histgram data="off_proba" index="tick" range="49"></histgram>
+
+<table class="table table-bordered table-striped">
+  <tr ng-repeat="item in most_proba_locations">
+    <td>{{item.range[0]}} - {{item.range[1]}}</td>
+    <td>{{item.locations.join(',')}}</td>
+  </tr>
+</table>
+
+<!--
+<br />
+<table class="table table-bordered table-striped">
+  <tr ng-repeat="row in semantic_data">
+    <td>{{row.location}}</td>
+    <td>{{row.station_desc}}</td>
+    <td>{{row.business}}</td>
+    <td>{{row.addr}}</td>
+    <td>{{row.tags}}</td>
+  </tr>
+</table>
+-->
+
+<div ng-repeat="freq_seq in freq_seqs">
+  <seq-map data="freq_seq"></freq-map>
+</div>
+
+<div class="row">
+  <div class="col-md-4" ng-repeat="speeds in total_speeds">
+    <speed-chart data="speeds"></speed-chart>
+  </div>
+</div>

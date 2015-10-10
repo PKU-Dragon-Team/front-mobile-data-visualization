@@ -3,6 +3,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -70,10 +71,6 @@ body {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
   /* Remove the padding we set earlier */
   .header,
   .marketing,
@@ -89,4 +86,12 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+
+.highlight {
+  color: red !important;
+  fill: red !important;
+  stroke: black;
+  stroke-width: 2px;
 }

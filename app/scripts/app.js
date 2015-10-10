@@ -15,19 +15,44 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.bootstrap.pagination'
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+      .when('/location/:uid', {
+        templateUrl: 'views/location.html',
+        controller: 'LocationCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/net/:uid', {
+        templateUrl: 'views/net.html',
+        controller: 'NetCtrl'
+      })
+      .when('/app-logs/:uid', {
+        templateUrl: 'views/app-logs.html',
+        controller: 'AppLogsCtrl'
+      })
+      .when('/map/:uid/:day', {
+        templateUrl: 'views/map.html',
+        controller: 'MapCtrl'
+      })
+      .when('/userlist', {
+        templateUrl: 'views/userlist.html',
+        controller: 'UserlistCtrl'
+      })
+      .when('/user/:uid', {
+        templateUrl: 'views/user.html',
+        controller: 'UserCtrl'
+      })
+      .when('/test', {
+        templateUrl: 'views/test.html',
+        controller: 'TestCtrl'
+      })
+      .when('/app_attrs/:uid', {
+        templateUrl: 'views/app_attrs.html',
+        controller: 'AppAttrsCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/test'
       });
   });
