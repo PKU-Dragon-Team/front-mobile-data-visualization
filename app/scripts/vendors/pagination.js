@@ -1,3 +1,4 @@
+'use strict';
 angular.module('ui.bootstrap.pagination', ["template/pagination/pagination.html", "template/pagination/pager.html"])
 
 .controller('PaginationController', ['$scope', '$attrs', '$parse', function ($scope, $attrs, $parse) {

@@ -26,19 +26,19 @@ angular.module('frontMobileDataVisualizationApp')
         return {
           tick: idx + 1,
           count: elem
-        }
+        };
       });
       $scope.move_proba = data['move'].map(function(elem, idx) {
         return {
           tick: idx + 1,
           count: elem
-        }
+        };
       });
       $scope.off_proba = data['off'].map(function(elem, idx) {
         return {
           tick: idx + 1,
           count: elem
-        }
+        };
       });
     });
     api.proba_matrix($routeParams.uid).success(function(data) {

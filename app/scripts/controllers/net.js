@@ -34,7 +34,7 @@ angular.module('frontMobileDataVisualizationApp')
       var newdata = [];
       var i = 0, j = 0;
       while(i < 24) {
-        if (data[j] && i == data[j].hour) {
+        if (data[j] && i === data[j].hour) {
           data[j].count /= 24;
           newdata.push(data[j]);
           j += 1;
@@ -55,7 +55,7 @@ angular.module('frontMobileDataVisualizationApp')
       var newdata = [];
       var i = 0, j = 0;
       while(i < 24) {
-        if (data[j] && i == data[j].hour) {
+        if (data[j] && i === data[j].hour) {
           data[j].count /= 24;
           newdata.push(data[j]);
           j += 1;
